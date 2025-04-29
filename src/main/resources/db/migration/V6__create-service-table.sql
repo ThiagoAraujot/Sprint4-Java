@@ -1,5 +1,5 @@
 CREATE TABLE Service (
-     id RAW(16) PRIMARY KEY,
+     id VARCHAR2(36) PRIMARY KEY,
      price NUMBER(10, 2) NOT NULL,
      service_date DATE NOT NULL,
      customer_id RAW(16),

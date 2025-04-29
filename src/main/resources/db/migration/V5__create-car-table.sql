@@ -1,5 +1,5 @@
 CREATE TABLE Car (
-     id RAW(16) PRIMARY KEY,
+     id VARCHAR2(36) PRIMARY KEY,
      model VARCHAR2(255) NOT NULL,
      factory_year NUMBER(4) NOT NULL,
      customer_id RAW(16),
