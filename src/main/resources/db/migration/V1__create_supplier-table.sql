@@ -1,0 +1,6 @@
+CREATE TABLE Supplier (
+  id RAW(16) PRIMARY KEY,
+  name VARCHAR2(255) NOT NULL,
+  cnpj VARCHAR2(20) NOT NULL,
+  phone VARCHAR2(20) NOT NULL
+);

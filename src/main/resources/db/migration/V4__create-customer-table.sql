@@ -1,0 +1,6 @@
+CREATE TABLE Customer (
+  id RAW(16) PRIMARY KEY,
+  name VARCHAR2(255) NOT NULL,
+  phone VARCHAR2(20) NOT NULL,
+  email VARCHAR2(255) NOT NULL
+);
