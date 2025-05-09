@@ -1,7 +1,8 @@
-CREATE TABLE Car (
-     id VARCHAR2(36) PRIMARY KEY,
-     model VARCHAR2(255) NOT NULL,
-     factory_year NUMBER(4) NOT NULL,
-     customer_id RAW(16),
-     CONSTRAINT fk_car_customer FOREIGN KEY (customer_id) REFERENCES Customer(id)
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE car (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    model VARCHAR(100) NOT NULL,
+    factory_year INTEGER NOT NULL,
+    customer_id UUID NOT NULL REFERENCES customer(id) ON DELETE CASCADE
 );

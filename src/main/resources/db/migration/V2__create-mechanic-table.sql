@@ -1,8 +1,8 @@
-CREATE TABLE Mechanic (
-    id VARCHAR2(36) PRIMARY KEY,
-    name VARCHAR2(255) NOT NULL,
-    address VARCHAR2(255) NOT NULL,
-    cnpj VARCHAR2(20) NOT NULL,
-    phone VARCHAR2(20) NOT NULL,
-    email VARCHAR2(255) NOT NULL
-);
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE mechanic (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    address VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(20) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL

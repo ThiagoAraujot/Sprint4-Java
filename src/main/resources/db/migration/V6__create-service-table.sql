@@ -1,11 +1,10 @@
-CREATE TABLE Service (
-     id VARCHAR2(36) PRIMARY KEY,
-     price NUMBER(10, 2) NOT NULL,
-     service_date DATE NOT NULL,
-     customer_id RAW(16),
-     car_id RAW(16),
-     employee_id RAW(16),
-     CONSTRAINT fk_service_customer FOREIGN KEY (customer_id) REFERENCES Customer(id),
-     CONSTRAINT fk_service_car FOREIGN KEY (car_id) REFERENCES Car(id),
-     CONSTRAINT fk_service_employee FOREIGN KEY (employee_id) REFERENCES Employee(id)
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE service (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    price DOUBLE PRECISION NOT NULL,
+    date DATE NOT NULL,
+    customer_id UUID NOT NULL REFERENCES customer(id) ON DELETE CASCADE,
+    car_id UUID NOT NULL REFERENCES car(id) ON DELETE CASCADE,
+    employee_id UUID NOT NULL REFERENCES employee(id) ON DELETE CASCADE
 );

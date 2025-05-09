@@ -1,10 +1,11 @@
-CREATE TABLE Employee (
-  id VARCHAR2(36) PRIMARY KEY,
-  name VARCHAR2(255) NOT NULL,
-  phone VARCHAR2(20) NOT NULL,
-  email VARCHAR2(255) NOT NULL,
-  role VARCHAR2(100) NOT NULL,
-  cpf VARCHAR2(20) NOT NULL,
-  mechanic_id RAW(16),
-  CONSTRAINT fk_employee_mechanic FOREIGN KEY (mechanic_id) REFERENCES Mechanic(id)
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE employee (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    role VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    mechanic_id UUID NOT NULL REFERENCES mechanic(id) ON DELETE CASCADE
 );
