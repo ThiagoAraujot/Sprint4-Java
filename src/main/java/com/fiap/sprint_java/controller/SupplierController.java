@@ -3,9 +3,11 @@ package com.fiap.sprint_java.controller;
 import com.fiap.sprint_java.domain.supplier.Supplier;
 import com.fiap.sprint_java.domain.supplier.SupplierRequestDTO;
 import com.fiap.sprint_java.service.SupplierService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,19 +45,12 @@ public class SupplierController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Supplier> updateSupplier(@PathVariable String id, @RequestBody SupplierRequestDTO body) {
-        Supplier supplier = this.supplierService.findById(UUID.fromString(id));
-
-        if (supplier == null) {
+        try {
+            Supplier updated = supplierService.update(id, body);
+            return new ResponseEntity<>(updated, HttpStatus.OK);
+        } catch (EntityNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
-        supplier.setName(body.name());
-        supplier.setCnpj(body.cnpj());
-        supplier.setPhone(body.phone());
-
-        Supplier supplierUpdated = this.supplierService.update(supplier);
-
-        return new ResponseEntity<>(supplierUpdated, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -68,6 +63,6 @@ public class SupplierController {
 
         this.supplierService.delete(supplier.getId());
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.noContent().build();
     }
 }

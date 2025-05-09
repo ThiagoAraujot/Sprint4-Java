@@ -15,9 +15,12 @@ import java.util.UUID;
 public class Supplier {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue
     private UUID id;
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
+    @Column(name = "cnpj", nullable = false, length = 11)
     private String cnpj;
+    @Column(name = "phone")
     private String phone;
 }
