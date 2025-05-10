@@ -21,7 +21,7 @@ public class SupplierController {
     private SupplierService supplierService;
 
     @PostMapping
-    public ResponseEntity<Supplier> saveSupplier(@RequestBody SupplierRequestDTO body) {
+    public ResponseEntity<Supplier> save(@RequestBody SupplierRequestDTO body) {
         Supplier newSupplier = this.supplierService.save(body);
         return ResponseEntity.status(HttpStatus.CREATED).body(newSupplier);
     }
@@ -44,7 +44,7 @@ public class SupplierController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Supplier> updateSupplier(@PathVariable String id, @RequestBody SupplierRequestDTO body) {
+    public ResponseEntity<Supplier> update(@PathVariable String id, @RequestBody SupplierRequestDTO body) {
         try {
             Supplier updated = supplierService.update(id, body);
             return new ResponseEntity<>(updated, HttpStatus.OK);
@@ -54,7 +54,7 @@ public class SupplierController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Supplier> deleteSupplier(@PathVariable String id) {
+    public ResponseEntity<Supplier> delete(@PathVariable String id) {
         Supplier supplier = this.supplierService.findById(UUID.fromString(id));
 
         if (supplier == null) {

@@ -17,10 +17,10 @@ public class Supplier {
     @Id
     @GeneratedValue
     private UUID id;
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String name;
-    @Column(name = "cnpj", nullable = false, length = 11)
+    @Column(nullable = false, length = 14)
     private String cnpj;
-    @Column(name = "phone")
+    @Column(nullable = false)
     private String phone;
 }
