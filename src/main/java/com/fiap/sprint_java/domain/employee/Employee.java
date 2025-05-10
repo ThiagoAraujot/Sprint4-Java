@@ -16,12 +16,17 @@ import java.util.UUID;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue()
     private UUID id;
+    @Column(nullable = false, length = 100)
     private String name;
+    @Column(nullable = false)
     private String phone;
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false)
     private String role;
+    @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
     @ManyToOne
