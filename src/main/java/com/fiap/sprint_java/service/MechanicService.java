@@ -21,11 +21,11 @@ public class MechanicService {
     public Mechanic save(MechanicRequestDTO body) {
         Mechanic newMechanic = new Mechanic();
 
-        newMechanic.setName(body.name());
-        newMechanic.setAddress(body.address());
-        newMechanic.setCnpj(body.cnpj());
-        newMechanic.setPhone(body.phone());
-        newMechanic.setEmail(body.email());
+        newMechanic.setName(body.getName());
+        newMechanic.setAddress(body.getAddress());
+        newMechanic.setCnpj(body.getCnpj());
+        newMechanic.setPhone(body.getPhone());
+        newMechanic.setEmail(body.getEmail());
 
         mechanicRepository.save(newMechanic);
 
@@ -44,11 +44,11 @@ public class MechanicService {
         Mechanic mechanic = mechanicRepository.findById(uuid)
                 .orElseThrow(() -> new EntityNotFoundException("Mechanic not found"));
 
-        mechanic.setName(body.name());
-        mechanic.setAddress(body.address());
-        mechanic.setCnpj(body.cnpj());
-        mechanic.setPhone(body.phone());
-        mechanic.setEmail(body.email());
+        mechanic.setName(body.getName());
+        mechanic.setAddress(body.getAddress());
+        mechanic.setCnpj(body.getCnpj());
+        mechanic.setPhone(body.getPhone());
+        mechanic.setEmail(body.getEmail());
 
         return mechanicRepository.save(mechanic);
     }
