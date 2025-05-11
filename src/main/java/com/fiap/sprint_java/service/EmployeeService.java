@@ -7,7 +7,6 @@ import com.fiap.sprint_java.domain.mechanic.Mechanic;
 import com.fiap.sprint_java.repository.EmployeeRepository;
 import com.fiap.sprint_java.repository.MechanicRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

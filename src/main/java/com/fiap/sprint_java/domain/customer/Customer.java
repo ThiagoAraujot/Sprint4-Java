@@ -18,6 +18,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
+    @Column(nullable = false)
     private String phone;
+    @Column(nullable = false, unique = true)
     private String email;
 }
