@@ -18,7 +18,9 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(nullable = false, length = 255)
     private String model;
+    @Column(nullable = false, length = 4)
     private Integer factory_year;
 
     @ManyToOne
