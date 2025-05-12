@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue()
     private UUID id;
     @Column(nullable = false, length = 255)
     private String model;

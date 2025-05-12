@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Service {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue()
     private UUID id;
 
     private Double price;
