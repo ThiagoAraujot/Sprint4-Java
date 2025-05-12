@@ -2,6 +2,7 @@ package com.fiap.sprint_java.controller;
 
 import com.fiap.sprint_java.domain.mechanic.Mechanic;
 import com.fiap.sprint_java.dto.mechanic.MechanicRequestDTO;
+import com.fiap.sprint_java.dto.mechanic.MechanicResponseDTO;
 import com.fiap.sprint_java.service.MechanicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,20 +20,20 @@ public class MechanicController {
     private MechanicService mechanicService;
 
     @PostMapping
-    public ResponseEntity<Mechanic> save(@RequestBody MechanicRequestDTO body) {
-        Mechanic mechanic = this.mechanicService.save(body);
+    public ResponseEntity<MechanicResponseDTO> save(@RequestBody MechanicRequestDTO body) {
+        MechanicResponseDTO mechanic = this.mechanicService.save(body);
         return ResponseEntity.status(HttpStatus.CREATED).body(mechanic);
     }
 
     @GetMapping
-    public ResponseEntity<List<Mechanic>> findAll() {
-        List<Mechanic> mechanics = this.mechanicService.findAll();
+    public ResponseEntity<List<MechanicResponseDTO>> findAll() {
+        List<MechanicResponseDTO> mechanics = this.mechanicService.findAll();
         return ResponseEntity.ok(mechanics);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Mechanic> findById(@PathVariable String id) {
-        Mechanic mechanic = this.mechanicService.findById(UUID.fromString(id));
+    public ResponseEntity<MechanicResponseDTO> findById(@PathVariable String id) {
+        MechanicResponseDTO mechanic = this.mechanicService.findById(UUID.fromString(id));
 
         if (mechanic == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -42,15 +43,15 @@ public class MechanicController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Mechanic> update(@PathVariable String id, @RequestBody MechanicRequestDTO body) {
-        Mechanic mechanic = this.mechanicService.update(id, body);
+    public ResponseEntity<MechanicResponseDTO> update(@PathVariable String id, @RequestBody MechanicRequestDTO body) {
+        MechanicResponseDTO mechanic = this.mechanicService.update(id, body);
 
         return ResponseEntity.status(HttpStatus.OK).body(mechanic);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable String id) {
-        Mechanic mechanic = this.mechanicService.findById(UUID.fromString(id));
+        MechanicResponseDTO mechanic = this.mechanicService.findById(UUID.fromString(id));
 
         if (mechanic == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
