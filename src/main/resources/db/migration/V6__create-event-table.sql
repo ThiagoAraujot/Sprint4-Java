@@ -3,7 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE service (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     price DOUBLE PRECISION NOT NULL,
-    date DATE NOT NULL,
+    service_date TIMESTAMP WITH TIME ZONE NOT NULL,
     customer_id UUID NOT NULL REFERENCES customer(id) ON DELETE CASCADE,
     car_id UUID NOT NULL REFERENCES car(id) ON DELETE CASCADE,
     employee_id UUID NOT NULL REFERENCES employee(id) ON DELETE CASCADE

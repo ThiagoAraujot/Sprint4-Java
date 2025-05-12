@@ -1,4 +1,4 @@
-package com.fiap.sprint_java.domain.service;
+package com.fiap.sprint_java.domain.event;
 
 import com.fiap.sprint_java.domain.car.Car;
 import com.fiap.sprint_java.domain.customer.Customer;
@@ -6,7 +6,7 @@ import com.fiap.sprint_java.domain.employee.Employee;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Table(name = "service")
@@ -16,16 +16,17 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Service {
+public class Event {
 
     @Id
     @GeneratedValue()
     private UUID id;
 
+    @Column(name = "price", nullable = true)
     private Double price;
 
-    @Column(name = "service_date")
-    private Date date;
+    @Column(name = "service_date", nullable = false)
+    private ZonedDateTime date;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
