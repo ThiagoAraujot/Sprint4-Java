@@ -1,7 +1,7 @@
 package com.fiap.sprint_java.controller;
 
-import com.fiap.sprint_java.domain.employee.EmployeeRequestDTO;
-import com.fiap.sprint_java.domain.employee.EmployeeResponseDTO;
+import com.fiap.sprint_java.dto.employee.EmployeeRequestDTO;
+import com.fiap.sprint_java.dto.employee.EmployeeResponseDTO;
 import com.fiap.sprint_java.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

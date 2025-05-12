@@ -1,4 +1,4 @@
-package com.fiap.sprint_java.domain.customer;
+package com.fiap.sprint_java.dto.customer;
 
 
 import lombok.Getter;

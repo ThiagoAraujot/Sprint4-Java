@@ -1,8 +1,8 @@
 package com.fiap.sprint_java.service;
 
 import com.fiap.sprint_java.domain.customer.Customer;
-import com.fiap.sprint_java.domain.customer.CustomerRequestDTO;
-import com.fiap.sprint_java.domain.customer.CustomerResponseDTO;
+import com.fiap.sprint_java.dto.customer.CustomerRequestDTO;
+import com.fiap.sprint_java.dto.customer.CustomerResponseDTO;
 import com.fiap.sprint_java.repository.CustomerRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;

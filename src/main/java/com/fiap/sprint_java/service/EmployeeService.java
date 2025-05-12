@@ -1,8 +1,8 @@
 package com.fiap.sprint_java.service;
 
 import com.fiap.sprint_java.domain.employee.Employee;
-import com.fiap.sprint_java.domain.employee.EmployeeRequestDTO;
-import com.fiap.sprint_java.domain.employee.EmployeeResponseDTO;
+import com.fiap.sprint_java.dto.employee.EmployeeRequestDTO;
+import com.fiap.sprint_java.dto.employee.EmployeeResponseDTO;
 import com.fiap.sprint_java.domain.mechanic.Mechanic;
 import com.fiap.sprint_java.repository.EmployeeRepository;
 import com.fiap.sprint_java.repository.MechanicRepository;

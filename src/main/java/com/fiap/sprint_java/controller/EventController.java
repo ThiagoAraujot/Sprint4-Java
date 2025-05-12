@@ -1,7 +1,7 @@
 package com.fiap.sprint_java.controller;
 
-import com.fiap.sprint_java.domain.event.EventRequestDTO;
-import com.fiap.sprint_java.domain.event.EventResponseDTO;
+import com.fiap.sprint_java.dto.event.EventRequestDTO;
+import com.fiap.sprint_java.dto.event.EventResponseDTO;
 import com.fiap.sprint_java.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

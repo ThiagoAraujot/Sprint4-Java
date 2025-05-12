@@ -1,7 +1,7 @@
 package com.fiap.sprint_java.controller;
 
-import com.fiap.sprint_java.domain.car.CarRequestDTO;
-import com.fiap.sprint_java.domain.car.CarResponseDTO;
+import com.fiap.sprint_java.dto.car.CarRequestDTO;
+import com.fiap.sprint_java.dto.car.CarResponseDTO;
 import com.fiap.sprint_java.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

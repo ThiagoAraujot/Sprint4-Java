@@ -1,4 +1,4 @@
-package com.fiap.sprint_java.domain.employee;
+package com.fiap.sprint_java.dto.employee;
 
 import com.fiap.sprint_java.domain.mechanic.Mechanic;
 import lombok.Getter;
@@ -8,11 +8,12 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class EmployeeRequestDTO {
+public class EmployeeResponseDTO {
+    private UUID id;
     private String name;
     private String phone;
     private String email;
     private String role;
     private String cpf;
-    private UUID mechanicId;
+    private Mechanic mechanic;
 }

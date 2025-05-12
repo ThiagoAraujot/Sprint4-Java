@@ -1,15 +1,13 @@
-package com.fiap.sprint_java.domain.mechanic;
+package com.fiap.sprint_java.dto.supplier;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class MechanicRequestDTO {
+public class SupplierRequestDTO {
 
     private String name;
-    private String address;
     private String cnpj;
     private String phone;
-    private String email;
 }

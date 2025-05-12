@@ -1,8 +1,8 @@
 package com.fiap.sprint_java.service;
 
 import com.fiap.sprint_java.domain.car.Car;
-import com.fiap.sprint_java.domain.car.CarRequestDTO;
-import com.fiap.sprint_java.domain.car.CarResponseDTO;
+import com.fiap.sprint_java.dto.car.CarRequestDTO;
+import com.fiap.sprint_java.dto.car.CarResponseDTO;
 import com.fiap.sprint_java.domain.customer.Customer;
 import com.fiap.sprint_java.repository.CarRepository;
 import com.fiap.sprint_java.repository.CustomerRepository;

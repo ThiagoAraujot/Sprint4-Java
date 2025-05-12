@@ -1,7 +1,7 @@
 package com.fiap.sprint_java.controller;
 
-import com.fiap.sprint_java.domain.customer.CustomerRequestDTO;
-import com.fiap.sprint_java.domain.customer.CustomerResponseDTO;
+import com.fiap.sprint_java.dto.customer.CustomerRequestDTO;
+import com.fiap.sprint_java.dto.customer.CustomerResponseDTO;
 import com.fiap.sprint_java.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

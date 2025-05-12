@@ -1,9 +1,8 @@
 package com.fiap.sprint_java.controller;
 
 import com.fiap.sprint_java.domain.mechanic.Mechanic;
-import com.fiap.sprint_java.domain.mechanic.MechanicRequestDTO;
+import com.fiap.sprint_java.dto.mechanic.MechanicRequestDTO;
 import com.fiap.sprint_java.service.MechanicService;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

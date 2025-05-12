@@ -1,13 +1,13 @@
 package com.fiap.sprint_java.controller;
 
 import com.fiap.sprint_java.domain.supplier.Supplier;
-import com.fiap.sprint_java.domain.supplier.SupplierRequestDTO;
+import com.fiap.sprint_java.dto.supplier.SupplierRequestDTO;
+import com.fiap.sprint_java.dto.supplier.SupplierResponseDTO;
 import com.fiap.sprint_java.service.SupplierService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,20 +21,20 @@ public class SupplierController {
     private SupplierService supplierService;
 
     @PostMapping
-    public ResponseEntity<Supplier> save(@RequestBody SupplierRequestDTO body) {
-        Supplier newSupplier = this.supplierService.save(body);
+    public ResponseEntity<SupplierResponseDTO> save(@RequestBody SupplierRequestDTO body) {
+        SupplierResponseDTO newSupplier = this.supplierService.save(body);
         return ResponseEntity.status(HttpStatus.CREATED).body(newSupplier);
     }
 
     @GetMapping
-    public ResponseEntity<List<Supplier>> findAll() {
-        List<Supplier> suppliers = this.supplierService.findAll();
+    public ResponseEntity<List<SupplierResponseDTO>> findAll() {
+        List<SupplierResponseDTO> suppliers = this.supplierService.findAll();
         return new ResponseEntity<>(suppliers, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Supplier> findById(@PathVariable String id) {
-        Supplier supplier = this.supplierService.findById(UUID.fromString(id));
+    public ResponseEntity<SupplierResponseDTO> findById(@PathVariable String id) {
+        SupplierResponseDTO supplier = this.supplierService.findById(UUID.fromString(id));
 
         if (supplier == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -44,9 +44,9 @@ public class SupplierController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Supplier> update(@PathVariable String id, @RequestBody SupplierRequestDTO body) {
+    public ResponseEntity<SupplierResponseDTO> update(@PathVariable String id, @RequestBody SupplierRequestDTO body) {
         try {
-            Supplier updated = supplierService.update(id, body);
+            SupplierResponseDTO updated = supplierService.update(id, body);
             return new ResponseEntity<>(updated, HttpStatus.OK);
         } catch (EntityNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -54,8 +54,8 @@ public class SupplierController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Supplier> delete(@PathVariable String id) {
-        Supplier supplier = this.supplierService.findById(UUID.fromString(id));
+    public ResponseEntity<SupplierResponseDTO> delete(@PathVariable String id) {
+        SupplierResponseDTO supplier = this.supplierService.findById(UUID.fromString(id));
 
         if (supplier == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

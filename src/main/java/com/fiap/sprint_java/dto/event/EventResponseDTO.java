@@ -1,4 +1,4 @@
-package com.fiap.sprint_java.domain.event;
+package com.fiap.sprint_java.dto.event;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fiap.sprint_java.domain.car.Car;

@@ -1,4 +1,4 @@
-package com.fiap.sprint_java.domain.car;
+package com.fiap.sprint_java.dto.car;
 
 import lombok.Getter;
 import lombok.Setter;
