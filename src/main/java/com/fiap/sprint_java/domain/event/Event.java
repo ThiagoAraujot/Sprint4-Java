@@ -26,7 +26,7 @@ public class Event {
     private Double price;
 
     @Column(name = "service_date", nullable = false)
-    private ZonedDateTime date;
+    private ZonedDateTime date; // Input: "2025-05-12T14:30:00-03:00"
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
